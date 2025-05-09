@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Republika Wenecka</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Republika Wenecka</h1>
+    <p>Najbardziej klimatyczny serwer RP w Polskim Community</p>
+    <a href="#dolacz" class="btn">Dołącz teraz</a>
+  </header>
+
+  <section class="about">
+    <h2>co możesz u nas robić?</h2>
+    <p>Republika wenecka została stworzona z myślą o demokracji,możesz zostać na serwerze kim kolwiek chcesz,posłem,obywatelem,wojskowym,prezydentem i wiele wiele więcej,oprócz tego możesz również grać na naszej ekonomii w której możesz kupywać różne role(prace) które ożywią twoją gre,zapraszamy!</p>
+  </section>
+
+  <section class="features">
+    <h2>Dlaczego warto?</h2>
+    <ul>
+      <li>🛡️ jesteśmy otwarci na nowych członków naszej społeczności</li>
+      <li>🎭 mamy wysoki poziom serwerowego Roleplay-u</li>
+      <li>🗺️ nasz kraj ma zamiar dołączyć do potężnego uniwersum!</li>
+      <li>👑 czekamy na ciebie każdego dnia!</li>
+    </ul>
+  </section>
+
+  <section class="server-info">
+  <h2>Informacje serwerowe</h2>
+
+  <div id="info-posts">
+    <!-- Tu będą leciały nowe posty -->
+  </div>
+
+<form id="info-form">
+  <h3>Dodaj nowy post</h3>
+
+  <input type="text" id="post-title" placeholder="Tytuł posta" required>
+
+  <textarea id="post-content" placeholder="Treść posta" required></textarea>
+
+  <input type="url" id="post-image" placeholder="URL obrazka (opcjonalnie)">
+
+  <button type="submit" class="btn">Dodaj</button>
+</form>
+
+</section>
+
+
+  <section id="dolacz">
+    <h2>Dołącz do nas</h2>
+    <p>Nie czekaj aż historia sama się napisze — napisz ją z nami.</p>
+    <a href=https://discord.gg/5XjupXhKpY class="btn">Discord</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Republika Wenecka RP. Wszystkie prawa zastrzeżone.</p>
+  </footer>
+</body>
+<script>
+  const form = document.getElementById('info-form');
+  const postsContainer = document.getElementById('info-posts');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const title = document.getElementById('post-title').value;
+    const content = document.getElementById('post-content').value;
+    const imageUrl = document.getElementById('post-image').value;
+
+    const postHTML = `
+      <div class="post">
+        <h4>${title}</h4>
+        <p>${content}</p>
+        <img src="${imageUrl}" alt="Post image">
+      </div>
+    `;
+
+    postsContainer.insertAdjacentHTML('afterbegin', postHTML);
+
+    form.reset();
+  });
+</script>
+
+</html>
+
